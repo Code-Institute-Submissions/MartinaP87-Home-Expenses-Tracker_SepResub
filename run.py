@@ -165,6 +165,28 @@ def totals_of_totals():
     print("Your total worksheet is updated!\n")
 
 
+def view_total_data():
+    """
+    Access the value of the Total Expenses for the selected month
+    or the Year Total of an expense type.
+    """
+    total_type = choose_total()
+    total_worksheet = SHEET.worksheet("total")
+    if total_type == "1":
+        month_total = choose_month()
+        month_column = int(month_total) + 1
+        row = len(total_worksheet.col_values(month_column))
+        cell = total_worksheet.cell(row, month_column).value
+        month_name = total_worksheet.cell(1, month_column).value
+        print(f"The total of your expenses for {month_name} is:\n £{cell}")
+    else:
+        exp_year_total = choose_expense_type()
+        requested_exp_type = total_worksheet.col_values(1)[int(exp_year_total)]
+        requested_value = total_worksheet.col_values(14)[int(exp_year_total)]
+        print(f"So far this year your {requested_exp_type} amount is:\n\
+£{requested_value}")
+
+
 def choose_total():
     """
     Allow the user to view the totals by month or expense type.
