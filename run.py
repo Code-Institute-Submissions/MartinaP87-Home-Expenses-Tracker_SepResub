@@ -34,3 +34,23 @@ totals\n 9: View the totals of your monthly expenses.")
         if validate_choice(worksheet_choice, max_num_choices):
             break
     return worksheet_choice
+
+
+def validate_choice(choice, max_num):
+    """
+    Inside the try, state that the value must be in a specific range.
+    Raise a value error if the string value is not convertible
+    into an integer or if it is outside the range.
+    """
+    try:
+        choice_number = int(choice)
+        if choice_number < 1 or choice_number > max_num:
+            raise ValueError(
+                f"Only values between 1 and {max_num} are acceptable, \
+you entered: {choice}"
+                )
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
+        return False
+
+    return True
