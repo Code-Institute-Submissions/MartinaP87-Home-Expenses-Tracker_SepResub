@@ -224,6 +224,34 @@ def choose_expense_type():
     return expense_type_num
 
 
+def calculate_total_budget(column, tot_index):
+    """
+    If the cell for the relative month of the Total Expense
+    (in the budget worksheet) is empty,
+    try to update it by adding all the values in the column.
+    If not possible, handle the error by printing a message
+    for the user explaining how to fix the issue.
+    """
+    month_column = int(column) + 1
+    budget_worksheet = SHEET.worksheet("budget")
+    budget_column = budget_worksheet.col_values(month_column)
+    row_num = tot_index + 1
+    try:
+        budget_column[tot_index]
+    except IndexError:
+        try:
+            budget_column.pop(0)
+            int_column = [int(value) for value in budget_column]
+            if len(int_column) == 3:
+                budget_tot = sum(int_column)
+                budget_worksheet.update_cell(row_num, month_column, budget_tot)
+            else:
+                raise ValueError
+        except ValueError:
+            print("You haven't set all expenses budgets for this month.\n\
+Total budget for this month can't be calculated.\n")
+
+
 def ind_rows_to_compare(chosen_worksheet_num):
     """
     Depending on the worksheet chosen, pick the row for total
