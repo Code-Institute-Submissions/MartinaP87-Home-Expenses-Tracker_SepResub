@@ -224,6 +224,36 @@ def choose_expense_type():
     return expense_type_num
 
 
+def compare_budgets(column, ind_row):
+    """
+    Access the total values of the expense updated and the expense budget.
+    Subtract the values and print a message to the user.
+    The message compares the values and states the discrepancy.
+    Handle any error if the subtraction is impossible
+    by printing feedback in the terminal.
+    """
+    month_column = int(column) + 1
+    total_worksheet = SHEET.worksheet("total")
+    budget_worksheet = SHEET.worksheet("budget")
+    month_name = budget_worksheet.col_values(month_column)[0]
+    expense_name = budget_worksheet.col_values(1)[ind_row]
+    try:
+        tot_value = total_worksheet.col_values(month_column)[ind_row]
+        budget = budget_worksheet.col_values(month_column)[ind_row]
+        if int(tot_value) <= int(budget):
+            difference = int(budget) - int(tot_value)
+            print(f"Congratulations!\n \
+For {month_name} your {expense_name} are still in the budget!\n\n\
+You are £{difference} far from exceeding your {expense_name} budget!\n")
+        else:
+            difference = int(tot_value) - int(budget)
+            print(f"Unfortunately, for {month_name} your {expense_name} \
+exceeded your budget of £{difference}.\n")
+    except Exception:
+        print(f"You don't have a budget for the {expense_name} in \
+{month_name}.\n")
+
+
 def validate_choice(choice, max_num):
     """
     Inside the try, state that the value must be in a specific range.
