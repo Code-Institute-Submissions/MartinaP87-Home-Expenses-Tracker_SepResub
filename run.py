@@ -349,3 +349,27 @@ def validate_input_data(value):
         print(f"Invalid data: {e}, please try again.\n")
         return False
     return True
+
+
+def validate_last_choice(value, possible_choice):
+    """
+    Inside the try, state that the value must be included
+    in possible choice.
+    Raise a value error if the value is not exactly 1
+    or if it's not correct.
+    """
+    try:
+        if value in possible_choice:
+            if len(value) != 1:
+                raise ValueError(
+                    f"Only 1 value is required, you entered {len(value)} \
+values.")
+        else:
+            raise ValueError(
+                f"You have input {value}; your value must be either y or n"
+                )
+    except ValueError as e:
+        print(f"invalid data: {e}. Please try again.\n")
+        return False
+
+    return True
