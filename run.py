@@ -140,6 +140,31 @@ def update_monthly_totals(row, worksheet_name, coordinate):
     total_worksheet.update(coordinate, updated_list)
 
 
+def totals_of_totals():
+    """
+    Clear the previous values in the Year Total column.
+    Sum the values of each row in the total worksheet to view
+    the yearly costs of each expense type.
+    Update the Year Total column with the new values.
+    """
+    print("Updating year totals...\n")
+    total_worksheet = SHEET.worksheet("total")
+    total_worksheet.batch_clear(["N2:N4"])
+    total_list = []
+    for num in range(2, 5):
+        row = total_worksheet.row_values(num)
+        row.pop(0)
+        int_row = [int(value) for value in row]
+        totals = [sum(int_row)]
+        total_list.append(totals)
+    total_worksheet.update("N2:N4", total_list)
+
+    print("Updating monthly totals...\n")
+    total_worksheet.batch_clear(["B5:N5"])
+    update_monthly_totals(2, "total", "B5")
+    print("Your total worksheet is updated!\n")
+
+
 def validate_choice(choice, max_num):
     """
     Inside the try, state that the value must be in a specific range.
