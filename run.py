@@ -165,6 +165,43 @@ def totals_of_totals():
     print("Your total worksheet is updated!\n")
 
 
+def choose_total():
+    """
+    Allow the user to view the totals by month or expense type.
+    Run a while loop to collect a valid string of data from the user
+    via terminal, which must be a number within 1 and 2.
+    The loop will repeatedly request data until it is valid.
+    """
+    print("Type 1:\n If you would like to view the total \
+of your expenses by month;\nType 2:\n If you prefer \
+to see how much you spent during this year so far, of an expense \
+type such as food or monthly bills.")
+    while True:
+        total_choice = input("Input:\n")
+        max_choices = 2
+        if validate_choice(total_choice, max_choices):
+            break
+    return total_choice
+
+
+def choose_expense_type():
+    """
+    Allow the user to choose the expense type.
+    Run a while loop to collect a valid string of data from the user
+    via terminal, which must be a number within 1 and 4.
+    The loop will repeatedly request data until it is valid.
+    """
+    print("Now type which kind of expense you would like to view:\n\
+1. Monthly Bills;\n2. Car Expenses\n3. Food Expenses;\n4. Total Expenses\n")
+    while True:
+        expense_type = input("Input:\n")
+        max_types = 4
+        if validate_choice(expense_type, max_types):
+            break
+    expense_type_num = int(expense_type)
+    return expense_type_num
+
+
 def validate_choice(choice, max_num):
     """
     Inside the try, state that the value must be in a specific range.
