@@ -73,6 +73,25 @@ def find_worksheet(chosen_worksheet_num):
     return worksheet_name
 
 
+def get_expense_data():
+    """
+    Get expense input from the user.
+    Run a while loop to collect a valid string of data from the user
+    via the terminal, which must be a string of a number.
+    The loop will repeatedly request data until it is valid.
+    """
+    print("Please enter the value of your expense or \
+budget, depending on your previous choice\
+\nData should be a decimal or an integer \
+number, which will be automatically approximated.\nExample: 109.08\n")
+    while True:
+        data = input("Enter your data here:\n")
+        if validate_input_data(data):
+            break
+    data_num = math.ceil(float(data))
+    return data_num
+
+
 def validate_choice(choice, max_num):
     """
     Inside the try, state that the value must be in a specific range.
