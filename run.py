@@ -110,3 +110,21 @@ you entered: {choice}"
         return False
 
     return True
+
+
+def validate_input_data(value):
+    """
+    Inside the try, convert the string value into an approximated integer.
+    Raises ValueError if the string is not convertible into an integer.
+    """
+    try:
+        if float(value) >= 0:
+            math.ceil(float(value))
+        else:
+            raise ValueError(
+                "Your value can't be a negative number"
+            )
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
+        return False
+    return True
