@@ -130,6 +130,16 @@ def calculate_totals(row, worksheet_name):
     return total_list_of_list
 
 
+def update_monthly_totals(row, worksheet_name, coordinate):
+    """
+    Update total worksheet with the new calculated totals
+    in the respective row.
+    """
+    total_worksheet = SHEET.worksheet("total")
+    updated_list = calculate_totals(row, worksheet_name)
+    total_worksheet.update(coordinate, updated_list)
+
+
 def validate_choice(choice, max_num):
     """
     Inside the try, state that the value must be in a specific range.
