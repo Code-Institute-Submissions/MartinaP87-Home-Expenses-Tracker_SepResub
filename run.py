@@ -111,6 +111,25 @@ def update_worksheet(data, chosen_worksheet_num, column, worksheet_name):
 The new value for {month_name} is: {data}.\n")
 
 
+def calculate_totals(row, worksheet_name):
+    """
+    Add all values for each column in a worksheet and
+    return the results as a list of list.
+    """
+    chosen_worksheet = SHEET.worksheet(worksheet_name)
+    total_list_of_list = []
+    total_list = []
+    column_number = len(chosen_worksheet.row_values(1))
+    for num in range(row, column_number + 1):
+        column = chosen_worksheet.col_values(num)
+        column.pop(0)
+        int_column = [int(value) for value in column]
+        totals = sum(int_column)
+        total_list.append(totals)
+    total_list_of_list.append(total_list)
+    return total_list_of_list
+
+
 def validate_choice(choice, max_num):
     """
     Inside the try, state that the value must be in a specific range.
