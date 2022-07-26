@@ -111,6 +111,25 @@ def update_worksheet(data, chosen_worksheet_num, column, worksheet_name):
 The new value for {month_name} is: {data}.\n")
 
 
+def totals_to_update(chosen_worksheet_num):
+    """
+    Assign the arguments to update monthly total
+    function in base of the letter choice
+    """
+    print("Updating total worksheet...\n")
+    if chosen_worksheet_num == "6":
+        update_monthly_totals(1, "car", "B3")
+        totals_of_totals()
+    elif chosen_worksheet_num == "7":
+        update_monthly_totals(1, "food", "B4")
+        totals_of_totals()
+    elif chosen_worksheet_num == "8":
+        pass
+    else:
+        update_monthly_totals(2, "monthly_bills", "B2")
+        totals_of_totals()
+
+
 def calculate_totals(row, worksheet_name):
     """
     Add all values for each column in a worksheet and
@@ -123,7 +142,7 @@ def calculate_totals(row, worksheet_name):
     for num in range(row, column_number + 1):
         column = chosen_worksheet.col_values(num)
         column.pop(0)
-        int_column = [int(value) for value in column]
+        int_column = [int(value if value != "" else "0") for value in column]
         totals = sum(int_column)
         total_list.append(totals)
     total_list_of_list.append(total_list)
@@ -154,7 +173,7 @@ def totals_of_totals():
     for num in range(2, 5):
         row = total_worksheet.row_values(num)
         row.pop(0)
-        int_row = [int(value) for value in row]
+        int_row = [int(value if value != "" else "0") for value in row]
         totals = [sum(int_row)]
         total_list.append(totals)
     total_worksheet.update("N2:N4", total_list)
@@ -373,3 +392,44 @@ values.")
         return False
 
     return True
+
+
+def main():
+    """
+    Run all program functions depending on the chosen operation
+    """
+    worksheet_num = choose_worksheet()
+    if worksheet_num == "9":
+        view_total_data()
+    elif worksheet_num == "8":
+        exp_type = choose_expense_type()
+        worksheet_to_update = find_worksheet(worksheet_num)
+        month = choose_month()
+        expense = get_expense_data()
+        update_worksheet(expense, exp_type, month, worksheet_to_update)
+        compare_budgets(month, exp_type)
+        monthly_tot_index = 4
+        if exp_type != monthly_tot_index:
+            calculate_total_budget(month, monthly_tot_index)
+            compare_budgets(month, monthly_tot_index)
+    else:
+        worksheet_to_update = find_worksheet(worksheet_num)
+        month = choose_month()
+        expense = get_expense_data()
+        update_worksheet(expense, worksheet_num, month, worksheet_to_update)
+        totals_to_update(worksheet_num)
+        rows_index = ind_rows_to_compare(worksheet_num)
+        compare_budgets(month, rows_index)
+        monthly_tot_index = 4
+        calculate_total_budget(month, monthly_tot_index)
+        compare_budgets(month, monthly_tot_index)
+    last_choice = exit_restart()
+    if last_choice == "y":
+        main()
+    else:
+        print("Have a great day!\nSee you next time!")
+
+
+print("Welcome to your Home Expense Tracker!\n")
+main()
+
