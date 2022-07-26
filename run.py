@@ -36,6 +36,27 @@ totals\n 9: View the totals of your monthly expenses.")
     return worksheet_choice
 
 
+def choose_month():
+    """
+    Allow the user to choose the month to update.
+    Run a while loop to collect a valid string of data from the user
+    via terminal, which must be a number within 1 and 12.
+    The loop will repeatedly request data until it is valid.
+    """
+    print("Now choose the month for your operation.\
+\n1: January,\n2: February,\n3: March,\n\
+4: April,\n5: May,\n6: June,\n7: July,\n8: August,\
+\n9: September,\n10: October,\n11: November,\
+\n12: December\n")
+    while True:
+        month_choice = input("Input:\n")
+        max_num_months = 12
+
+        if validate_choice(month_choice, max_num_months):
+            break
+    return month_choice
+
+
 def validate_choice(choice, max_num):
     """
     Inside the try, state that the value must be in a specific range.
