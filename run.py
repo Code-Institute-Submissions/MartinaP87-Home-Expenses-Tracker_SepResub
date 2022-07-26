@@ -57,6 +57,22 @@ def choose_month():
     return month_choice
 
 
+def find_worksheet(chosen_worksheet_num):
+    """
+    Locate the worksheet that the user has chosen to update
+    """
+    if chosen_worksheet_num == "6":
+        worksheet_name = "car"
+    elif chosen_worksheet_num == "7":
+        worksheet_name = "food"
+    elif chosen_worksheet_num == "8":
+        worksheet_name = "budget"
+    else:
+        worksheet_name = "monthly_bills"
+    print(worksheet_name)
+    return worksheet_name
+
+
 def validate_choice(choice, max_num):
     """
     Inside the try, state that the value must be in a specific range.
