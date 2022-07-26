@@ -224,6 +224,20 @@ def choose_expense_type():
     return expense_type_num
 
 
+def ind_rows_to_compare(chosen_worksheet_num):
+    """
+    Depending on the worksheet chosen, pick the row for total
+    and budget worksheets that compare_budget function will compare.
+    """
+    if int(chosen_worksheet_num) <= 5:
+        ind_row = 1
+    elif int(chosen_worksheet_num) == 6:
+        ind_row = 2
+    else:
+        ind_row = 3
+    return ind_row
+
+
 def compare_budgets(column, ind_row):
     """
     Access the total values of the expense updated and the expense budget.
