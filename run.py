@@ -296,6 +296,23 @@ exceeded your budget of £{difference}.\n")
 {month_name}.\n")
 
 
+def exit_restart():
+    """
+    Request the user to choose between exiting
+    the app or continuing with a new operation.
+    Run a while loop to collect a valid string of data from the user
+    via terminal, which must be a string with value y or n.
+    The loop will repeatedly request data until it is valid.
+    """
+    while True:
+        print("Do you wish to continue with another operation?")
+        last_input = input("Input y for yes or n for no\n").lower()
+        choice_options = ("y", "n")
+        if validate_last_choice(last_input, choice_options):
+            break
+    return last_input
+
+
 def validate_choice(choice, max_num):
     """
     Inside the try, state that the value must be in a specific range.
