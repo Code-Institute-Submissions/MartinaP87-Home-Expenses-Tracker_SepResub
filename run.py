@@ -92,6 +92,25 @@ number, which will be automatically approximated.\nExample: 109.08\n")
     return data_num
 
 
+def update_worksheet(data, chosen_worksheet_num, column, worksheet_name):
+    """
+    With the data provided, update the relevant cell
+    if the first choice was a monthly bill.
+    Otherwise, update the first cell available of
+    the chosen month column in the relevant worksheet.
+    """
+    chosen_worksheet = SHEET.worksheet(worksheet_name)
+    if int(chosen_worksheet_num) <= 5:
+        row = int(chosen_worksheet_num) + 1
+        column = int(column) + 1
+    else:
+        row = len(chosen_worksheet.col_values(column)) + 1
+    chosen_worksheet.update_cell(row, column, data)
+    month_name = chosen_worksheet.row_values(1)[int(column) - 1]
+    print(f"Your {worksheet_name} worksheet has been updated:\n\
+The new value for {month_name} is: {data}.\n")
+
+
 def validate_choice(choice, max_num):
     """
     Inside the try, state that the value must be in a specific range.
