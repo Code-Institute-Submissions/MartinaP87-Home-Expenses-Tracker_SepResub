@@ -9,13 +9,13 @@ It also targets families with low incomes, who need to pay attention to any expe
 
 ## FEATURES:
 
-### Welcome Section
+### Welcome Section:
  <img src ="readme-images/welcome.png">
 
 - This first section greets the user with a welcome message and requests to enter a number to choose the operation to perform from the presented list.
 - If the input choice is not in the number range or not a number at all, the program displays a customized message error.
 
-### Months Section
+### Months Section:
 <img src="readme-images/months.png">
 
 - This section requests the user to enter a number to choose the month relative to the previously selected operation.
@@ -25,18 +25,18 @@ It also targets families with low incomes, who need to pay attention to any expe
   - The first choice is to view a total and the choice of Total Type Section is 1.
 - If the input choice is not in the number range or not a number at all, the program displays a customized message error.
 
-### Input Section
+### Input Section:
 <img src="readme-images/input.png">
 
 - This section requests the user to enter the expense value to be registered or the budget's value to be set.
 - If the input choice is not a positive number, the program displays a customized message error.
 
-### Feedback Section
+### Feedback Section:
 <img src="readme-images/feedback.png">
 
 - In this section, the program sends feedback to the user explaining how it handles the input data by printing the worksheet updated, the month, and the new value. Updating a value also triggers an update of monthly and yearly totals; messages of the main steps of the operations are displayed here too.
 
-### Budget Section
+### Budget Section:
 <img src="readme-images/budget.png">
 
 - This section shows messages about the comparison between
@@ -46,13 +46,13 @@ monthly and yearly expenses and their respective budgets.
   - The first choice is to update an expense;
   - The first choice is to set a monthly budget.
 
-### Restart/Leave Section
+### Restart/Leave Section:
 <img src="readme-images/restart.png">
 
 - In this section, the program requests the user to choose between exiting the app or restarting the program.
 - If the input choice is: a letter but not y or n, not a letter at all, or more than one letter, the program displays a customized message error.
 
-### Expense Type Section
+### Expense Type Section:
 <img src="readme-images/expense-type.png">
 
 - In this section, the program requests to enter a number to choose the expense type.
@@ -61,7 +61,7 @@ monthly and yearly expenses and their respective budgets.
   - The first choice is to view a total and the choice of Total Type Section is 2.
 - If the input choice is not in the number range or not a number at all, the program displays a customized message error.
 
-### View Total Section
+### View Total Section:
 <img src="readme-images/total.png">
 
 - In this section, the program requests to choose which total to display: the total of expenses by month or the total of a specific expense type by year.
