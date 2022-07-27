@@ -27,7 +27,7 @@ kind of expense you are updating today:\n 1: Gas bill,\n 2: \
 Electricity bill,\n 3: Water bill\
 ,\n 4: Council tax,\n 5: Phone bill,\n 6: Car expenses,\n 7\
 : Food expenses;\n-Set a budget:\n 8: Set a monthly budget\n-View \
-totals\n 9: View the totals of your monthly expenses.")
+totals\n 9: View the totals of your monthly expenses.\n")
     while True:
         worksheet_choice = input("Input:\n")
         max_num_choices = 9
