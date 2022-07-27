@@ -311,7 +311,7 @@ You are £{difference} far from exceeding your {expense_name} budget!\n")
             print(f"Unfortunately, for {month_name}\nyour {expense_name} \
 exceeded your budget of £{difference}.\n")
     except Exception:
-        print(f"You don't have a budget for\nthe {expense_name} in \
+        print(f"You don't have a total or a budget for\nthe {expense_name} in \
 {month_name}.\n")
 
 

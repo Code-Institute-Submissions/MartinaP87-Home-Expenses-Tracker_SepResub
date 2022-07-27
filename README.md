@@ -33,6 +33,8 @@ It also targets families with low incomes, who need to pay attention to any expe
 <img src="readme-images/input.png">
 
 - This section requests the user to enter the expense value to be registered or the budget's value to be set.
+
+<img src="readme-images/input-invalid.png">
 - If the input choice is not a positive number, the program displays a customized message error.
 
 ### Feedback Section:
@@ -45,6 +47,8 @@ It also targets families with low incomes, who need to pay attention to any expe
 
 - This section shows messages about the comparison between
 monthly and yearly expenses and their respective budgets.
+<img src="readme-images/budget-imp.png">
+
 - If the comparison is not possible, another sentence explains the reason on the terminal.
 - This section is displayed if:
   - The first choice is to update an expense;
@@ -54,6 +58,8 @@ monthly and yearly expenses and their respective budgets.
 <img src="readme-images/restart.png">
 
 - In this section, the program requests the user to choose between exiting the app or restarting the program.
+<img src="readme-images/restart-invalid.png">
+
 - If the input choice is: a letter but not y or n, not a letter at all, or more than one letter, the program displays a customized message error.
 
 ### Expense Type Section:
@@ -63,6 +69,8 @@ monthly and yearly expenses and their respective budgets.
 - This section is displayed if:
   - The first choice is to set a monthly budget;
   - The first choice is to view a total and the choice of Total Type Section is 2.
+<img src="readme-images/expense-type-invalid.png">
+
 - If the input choice is not in the number range or not a number at all, the program displays a customized message error.
 
 ### View Total Section:
