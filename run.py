@@ -81,9 +81,9 @@ def get_expense_data():
     The loop will repeatedly request data until it is valid.
     """
     print("Please enter the value of your expense or \
-budget, depending on your previous choice\
+budget,\ndepending on your previous choice.\
 \nData should be a decimal or an integer \
-number, which will be automatically approximated.\nExample: 109.08\n")
+number,\nwhich will be automatically approximated.\nExample: 109.08\n")
     while True:
         data = input("Enter your data here:\n")
         if validate_input_data(data):
@@ -215,7 +215,7 @@ def choose_total():
     """
     print("Type 1:\n If you would like to view the total \
 of your expenses by month;\nType 2:\n If you prefer \
-to see how much you spent during this year so far, of an expense \
+to see how much you spent during this year so far,\nof an expense \
 type such as food or monthly bills.")
     while True:
         total_choice = input("Input:\n")
@@ -304,14 +304,14 @@ def compare_budgets(column, ind_row):
         if int(tot_value) <= int(budget):
             difference = int(budget) - int(tot_value)
             print(f"Congratulations!\n \
-For {month_name} your {expense_name} are still in the budget!\n\n\
+For {month_name} your {expense_name} are still in the budget!\n\
 You are £{difference} far from exceeding your {expense_name} budget!\n")
         else:
             difference = int(tot_value) - int(budget)
-            print(f"Unfortunately, for {month_name} your {expense_name} \
+            print(f"Unfortunately, for {month_name}\nyour {expense_name} \
 exceeded your budget of £{difference}.\n")
     except Exception:
-        print(f"You don't have a budget for the {expense_name} in \
+        print(f"You don't have a budget for\nthe {expense_name} in \
 {month_name}.\n")
 
 
@@ -342,11 +342,11 @@ def validate_choice(choice, max_num):
         choice_number = int(choice)
         if choice_number < 1 or choice_number > max_num:
             raise ValueError(
-                f"Only values between 1 and {max_num} are acceptable, \
+                f"Only values between 1 and {max_num} are acceptable,\n\
 you entered: {choice}"
                 )
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+        print(f"Invalid data: {e}.\nPlease try again.\n")
         return False
 
     return True
@@ -365,7 +365,7 @@ def validate_input_data(value):
                 "Your value can't be a negative number"
             )
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+        print(f"Invalid data: {e}.\nPlease try again.\n")
         return False
     return True
 
@@ -381,14 +381,14 @@ def validate_last_choice(value, possible_choice):
         if value in possible_choice:
             if len(value) != 1:
                 raise ValueError(
-                    f"Only 1 value is required, you entered {len(value)} \
+                    f"Only 1 value is required,\nyou entered {len(value)} \
 values.")
         else:
             raise ValueError(
-                f"You have input {value}; your value must be either y or n"
+                f"You have input {value};\nyour value must be either y or n"
                 )
     except ValueError as e:
-        print(f"invalid data: {e}. Please try again.\n")
+        print(f"invalid data: {e}.\nPlease try again.\n")
         return False
 
     return True

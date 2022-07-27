@@ -1,5 +1,5 @@
 # Home Expenses Tracker
-[View the live project here]()
+[View the live project here](https://home-expenses-tracker87.herokuapp.com/)
 
 Home Expenses Tracker is a command-line application that allows to set budgets and input basic home expenses such as bills, food, and car expenses throughout the year.
 The application calculates the totals and compares them to budgets when set by the user or calculable.
@@ -13,6 +13,8 @@ It also targets families with low incomes, who need to pay attention to any expe
  <img src ="readme-images/welcome.png">
 
 - This first section greets the user with a welcome message and requests to enter a number to choose the operation to perform from the presented list.
+<img src ="readme-images/welcome-invalid.png">
+
 - If the input choice is not in the number range or not a number at all, the program displays a customized message error.
 
 ### Months Section:
@@ -23,6 +25,8 @@ It also targets families with low incomes, who need to pay attention to any expe
   - The first choice is to update an expense;
   - The first choice is to set a monthly budget;
   - The first choice is to view a total and the choice of Total Type Section is 1.
+  <img src="readme-images/months-invalid.png">
+
 - If the input choice is not in the number range or not a number at all, the program displays a customized message error.
 
 ### Input Section:
@@ -211,7 +215,7 @@ When looping through the values of numerous worksheets, the program would have r
 Reducing the number of worksheets fixed the problem.
 
 When calculating the monthly bill totals, if there was an empty cell in the column, the program would have raised an int() error since "" can't be converted into an integer. 
-Fill up all cells with 0 values temporary fixed the error.
+Fill up all cells with 0 values temporarily fixed the error.
 Adding a ternary operator in the function to convert to 0 all empty strings fixed the problem.
 
 ## Deployment:
@@ -241,7 +245,7 @@ Adding a ternary operator in the function to convert to 0 all empty strings fixe
 - Enter the name of your repository in the search bar and click **Search**;
 - Once your repository it's shown underneath, click on **Connect**;
 - Scroll down to the **Manual deploy** section;
-- Click on **Deploy branch** making sure the branch to deploy is **master**;
+- Click on **Deploy branch** making sure the branch to deploy is **main**;
 - Wait until you see the message **Your app was successfully deployed**;
 - Click on **View** to make sure your mock terminal is up and running.
   
