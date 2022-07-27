@@ -217,7 +217,7 @@ monthly and yearly expenses and their respective budgets.
 
 ### Validator Testing:
 - PEP8 
-No errors were returned when passing through the official [PEP8 validator]();
+No errors were returned when passing through the official [PEP8 validator](http://pep8online.com/);
 
 ## Bugs:
 The initial idea was to create a worksheet for every expense.
