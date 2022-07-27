@@ -245,3 +245,14 @@ Adding a ternary operator in the function to convert to 0 all empty strings fixe
 - Wait until you see the message **Your app was successfully deployed**;
 - Click on **View** to make sure your mock terminal is up and running.
   
+## Credits:
+- Code Institute's Love sandwiches walkthrough project: it helped to connect API, build the basic structure of my project and deploy it;
+- [Ternary operator tutorial](https://www.tutorialspoint.com/ternary-operator-in-python): helped to solve the previously mentioned bug;
+- [Grammarly](https://app.grammarly.com/): helped to correct grammar errors.
+
+### Media:
+[Lucidchart](https://www.lucidchart.com): used for the diagram in README.md
+
+## Libraries:
+[Gspread](://docs.gspread.org)
+[Google auth](https://pypi.org/project/google-auth/)
