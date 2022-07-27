@@ -213,3 +213,35 @@ Reducing the number of worksheets fixed the problem.
 When calculating the monthly bill totals, if there was an empty cell in the column, the program would have raised an int() error since "" can't be converted into an integer. 
 Fill up all cells with 0 values temporary fixed the error.
 Adding a ternary operator in the function to convert to 0 all empty strings fixed the problem.
+
+## Deployment:
+- In GitHub, create a list of requirements in requirements.txt by using this command in the terminal: **pip3 freeze > requirements.txt**;
+- Commit and push these changes;
+- Create an account on [Heroku](https://www.heroku.com/):
+  - On the homepage, click sign-up and fill out the form;
+  - Click **Create free account**;
+  - Click the link provided in the confirmation email sent by Heroku;
+  - Set a password and login;
+  - Proceed and accept the terms of service;
+- Click the **Create new app** button;
+- Name your app by typing the chosen name under **App name**;
+- Select your region and click the **Create app** button;
+- On the menu bar, click on **Settings**;
+- In the **Config Vars** section, click on **Reveal Config Vars**;
+- In the field for **KEY** enter **CREDS**;
+- Go back to the workspace, open creds.json, and copy the content;
+- In the field for **VALUE** paste the creds.json file, and click **Add**;
+- Add another Config Var underneath by entering **PORT** in the **KEY** field, **8000** in the VALUE field, and clicking the **Add** button;
+- Scroll down to the **Buildpacks** section and click on **Add buildpack**;
+- Select **Python** and click **Save changes**;
+- Click on **Add buildpack** again, select **Node.js**, and click **Save changes**;
+- Scroll up to the main menu bar and click on **Deploy**;
+- In the **Deployment method** section, select **GitHub**;
+- Click **Connect to GitHub**;
+- Enter the name of your repository in the search bar and click **Search**;
+- Once your repository it's shown underneath, click on **Connect**;
+- Scroll down to the **Manual deploy** section;
+- Click on **Deploy branch** making sure the branch to deploy is **master**;
+- Wait until you see the message **Your app was successfully deployed**;
+- Click on **View** to make sure your mock terminal is up and running.
+  
