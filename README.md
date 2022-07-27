@@ -77,6 +77,8 @@ monthly and yearly expenses and their respective budgets.
 <img src="readme-images/total.png">
 
 - In this section, the program requests to choose which total to display: the total of expenses by month or the total of a specific expense type by year.
+<img src="readme-images/total-invalid.png">
+
 - If the input choice is not in the number range or not a number at all, the program displays a customized message error.
 
 ## Data Model:
