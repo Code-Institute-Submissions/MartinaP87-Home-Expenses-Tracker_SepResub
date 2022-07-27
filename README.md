@@ -66,3 +66,141 @@ monthly and yearly expenses and their respective budgets.
 
 - In this section, the program requests to choose which total to display: the total of expenses by month or the total of a specific expense type by year.
 - If the input choice is not in the number range or not a number at all, the program displays a customized message error.
+
+## Data Model:
+<img src="readme-images/chart.png">
+
+## Testing:
+
+<table>
+<thead>
+<tr>
+<th>Action or Event</th>
+<th>Expected Result</th>
+<th>Successful?<th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Run the program</td>
+<td>Show welcome message and request of operation to execute</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Type a number, not in the options range or a non-number</td>
+<td>- Error message appears without stopping the program<br>
+- Request again a valid input</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>To update a worksheet: type a number between 1 and 7</td>
+<td>Access to month options</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Type a number between 1 and 12</td>
+<td>Request the value of the expense</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Type a number less than 0 or a non-number</td>
+<td>- Error message appears without stopping the program<br>
+- Request again a valid input</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Enter valid data</td>
+<td>- Update the relevant worksheet and inform the user;<br>
+    - If the entry is of a monthly bill, only one value per month will be allowed;<br>
+    - If the entry is for car or food expenses, it's possible to add more values for the same month;<br>
+    - Update the monthly total of the selected expense in the total worksheet and inform the user;<br>
+    - Update Year Total in the total worksheet and inform the user;<br>
+    - Access the monthly budget for the selected expense and compare it to the respective total by sending a message to the user;<br>
+    - State the difference between monthly budget and total;<br>
+    - If the value for the monthly budget is not present, inform the user;<br>
+    - Access the yearly budget for the selected expense and compare it to the respective total by sending a message to the user;<br>
+    - If the value for the yearly budget is not present, try to calculate it.<br>If calculation is not possible due to missing information, inform the user
+    - State the difference between yearly budget and total;<br>
+    - Request to exit the game or continue with a new operation.
+</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Type "y"</td>
+<td>Restart the program</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Type "n"</td>
+<td>Exit the program</td>
+<td>Yes</td>
+</tr>
+<td>Type anything else</td>
+<td>- Error message appears without stopping the program<br>
+- Request again a valid input</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>To set a monthly budget: type 8</td>
+<td>Access to expense type options</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Type a number not in the options range or a non-number</td>
+<td>- Error message appears without stopping the program<br>
+- Request again a valid input</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Enter valid number</td>
+<td>Access to month options</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Enter valid number</td>
+<td>Request relevant budget input</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Enter budget data</td>
+<td>- Update budget worksheet and inform the user;<br>
+    - Access the monthly total for the selected expense and compare it to the respective budget by sending a message to the user;<br>
+    - State the difference between monthly budget and total;<br>
+    - Access the yearly budget for the selected expense and compare it to the respective total by sending a message to the user;<br>
+    - If the value for the yearly budget is not present, try to calculate it.<br>- If calculation is not possible due to missing information, inform the user;<br>
+    - State the difference between yearly budget and total;<br>
+    - Request to exit the game or continue with a new operation.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>To view totals: type 9</td>
+<td>Access to total type options: by month or by expense type</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Type 1</td>
+<td>Access to month option</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Select month number</td>
+<td>- Print a message with the total of the expenses for the relevant month;<br>- Request to exit the game or continue with a new operation.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Type 2</td>
+<td>Access to expense type options</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Type expense type number</td>
+<td>- Print a message with the yearly total of the selected expense type;<br>- Request to exit the game or continue with a new operation.</td>
+<td>Yes</td>
+</tr>
+<tr>
+</tbody>
+</table>
+
+### Validator Testing:
+- PEP8 
+No errors were returned when passing through the official [PEP8 validator]();
