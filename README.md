@@ -204,3 +204,12 @@ monthly and yearly expenses and their respective budgets.
 ### Validator Testing:
 - PEP8 
 No errors were returned when passing through the official [PEP8 validator]();
+
+## Bugs:
+The initial idea was to create a worksheet for every expense.
+When looping through the values of numerous worksheets, the program would have raised a 429 "Too many requests" error.
+Reducing the number of worksheets fixed the problem.
+
+When calculating the monthly bill totals, if there was an empty cell in the column, the program would have raised an int() error since "" can't be converted into an integer. 
+Fill up all cells with 0 values temporary fixed the error.
+Adding a ternary operator in the function to convert to 0 all empty strings fixed the problem.
