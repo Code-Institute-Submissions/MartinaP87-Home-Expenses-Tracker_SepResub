@@ -1,6 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import math
+import datetime
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -17,17 +18,38 @@ def choose_worksheet():
     """
     Allow the user to choose the field to which the expense belongs
     or to access total worksheet.
+    Show the spending of the current month and how much budget
+    is left to be spent, if a budget was set.
     Run a while loop to collect a valid string from the user
     via terminal, which must be a string of 1 letter within the possible
     choices. The loop will repeatedly request data until it is valid.
     """
-    print("Please select what kind of operation you would like \
+    try:
+        current_month = int(datetime.datetime.today().month) + 1
+        spent = SHEET.worksheet("total").col_values(current_month)
+        budget = SHEET.worksheet("budget").col_values(current_month)
+
+        def budget_left(row):
+            bgt_left = int(budget[row]) - int(spent[row])
+            return bgt_left
+        print(f"Please select what kind of operation you would like \
 to perform:\n-Update a worksheet:\n Please select what \
 kind of expense you are updating today:\n 1: Gas bill,\n 2: \
 Electricity bill,\n 3: Water bill\
-,\n 4: Council tax,\n 5: Phone bill,\n 6: Car expenses,\n 7\
-: Food expenses;\n-Set a budget:\n 8: Set a monthly budget\n-View \
-totals\n 9: View the totals of your monthly expenses.\n")
+,\n 4: Council tax,\n 5: Rent/Mortgage,\n  This month: spent £{spent[1]}, \
+budget left £{budget_left(1)}\n\n 6: Car expenses,\n\
+  This month: spent £{spent[2]}, budget left £{budget_left(2)}\n\n\
+ 7: Food expenses;\n  This month: spent £{spent[3]}, \
+budget left £{budget_left(3)}\n\n-Set a budget:\n 8: Set a monthly \
+budget\n-View totals\n 9: View the totals of your monthly expenses.")
+    except ValueError:
+        print("Please select what kind of operation you would like \
+to perform:\n-Update a worksheet:\n Please select what \
+kind of expense you are updating today:\n 1: Gas bill,\n 2: \
+Electricity bill,\n 3: Water bill,\n 4: Council tax,\n \
+5: Rent/Mortgage,\n 6: Car expenses,\n 7: Food expenses;\n-Set a budget:\
+\n 8: Set a monthly budget\n-View totals\n 9: View the totals of your \
+monthly expenses.")
     while True:
         worksheet_choice = input("Input:\n")
         max_num_choices = 9

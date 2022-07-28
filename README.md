@@ -13,6 +13,9 @@ It also targets families with low incomes, who need to pay attention to any expe
  <img src ="readme-images/welcome.png">
 
 - This first section greets the user with a welcome message and requests to enter a number to choose the operation to perform from the presented list.
+<img src ="readme-images/welcome-complete.png">
+
+- If budgets have been set for the current month, it also gives the user immediate information about spending and budgets.
 <img src ="readme-images/welcome-invalid.png">
 
 - If the input choice is not in the number range or not a number at all, the program displays a customized message error.
@@ -25,7 +28,7 @@ It also targets families with low incomes, who need to pay attention to any expe
   - The first choice is to update an expense;
   - The first choice is to set a monthly budget;
   - The first choice is to view a total and the choice of Total Type Section is 1.
-  <img src="readme-images/months-invalid.png">
+  <img src="readme-images/month-invalid.png">
 
 - If the input choice is not in the number range or not a number at all, the program displays a customized message error.
 
@@ -81,7 +84,7 @@ monthly and yearly expenses and their respective budgets.
 
 - If the input choice is not in the number range or not a number at all, the program displays a customized message error.
 
-## Data Model:
+## Flowchart:
 <img src="readme-images/chart.png">
 
 ## Testing:
