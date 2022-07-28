@@ -7,6 +7,9 @@ The program's goal is to provide the user with an immediate understanding of ess
 Home Expenses Tracker's target is young adults who just moved out from their parent's house and need to plan and manage their finances.
 It also targets families with low incomes, who need to pay attention to any expense to stay within their budgets.
 
+To test the application without values here is the [link to the spreadsheet](https://docs.google.com/spreadsheets/d/16d9rYHmNwyW3FMlEfA099DIhwE0__wkl2gUl_VtKcjY/edit?usp=sharing).
+Bear in mind that the values in the food and car worksheet must be subsequential for the correct functioning of the app.
+
 ## FEATURES:
 
 ### Welcome Section:
@@ -265,11 +268,12 @@ Adding a ternary operator in the function to convert to 0 all empty strings fixe
 ## Credits:
 - Code Institute's Love sandwiches walkthrough project: it helped to connect API, build the basic structure of my project and deploy it;
 - [Ternary operator tutorial](https://www.tutorialspoint.com/ternary-operator-in-python): helped to solve the previously mentioned bug;
+- [Get the month of a datetime](https://www.adamsmith.haus/python/examples/5639/datetime-get-the-year,-month,-and-day-of-a-%60datetime%60)
 - [Grammarly](https://app.grammarly.com/): helped to correct grammar errors.
 
 ### Media:
 [Lucidchart](https://www.lucidchart.com): used for the diagram in README.md
 
 ## Libraries:
-[Gspread](://docs.gspread.org)
-[Google auth](https://pypi.org/project/google-auth/)
+[Gspread](https://docs.gspread.org);<br>
+[Google auth](https://pypi.org/project/google-auth/).
