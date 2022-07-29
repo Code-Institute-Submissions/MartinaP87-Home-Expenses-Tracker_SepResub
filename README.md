@@ -56,6 +56,7 @@ monthly and yearly expenses and their respective budgets.
 <img src="readme-images/budget-imp.png">
 
 - If the comparison is not possible, another sentence explains the reason on the terminal.
+- The Total Expenses budget can be set or calculated; if it's set, the value doesn't necessarily need to be the same as the sum of the other budgets.
 - This section is displayed if:
   - The first choice is to update an expense;
   - The first choice is to set a monthly budget.
