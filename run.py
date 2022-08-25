@@ -42,7 +42,7 @@ budget left £{budget_left(1)}\n\n 6: Car expenses,\n\
  7: Food expenses;\n  This month: spent £{spent[3]}, \
 budget left £{budget_left(3)}\n\n-Set a budget:\n 8: Set a monthly \
 budget\n-View totals\n 9: View the totals of your monthly expenses.")
-    except ValueError:
+    except IndexError:
         print("Please select what kind of operation you would like \
 to perform:\n-Update a worksheet:\n Please select what \
 kind of expense you are updating today:\n 1: Gas bill,\n 2: \
