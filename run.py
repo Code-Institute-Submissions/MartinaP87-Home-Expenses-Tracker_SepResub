@@ -30,7 +30,11 @@ def choose_worksheet():
         budget = SHEET.worksheet("budget").col_values(current_month)
 
         def budget_left(row):
-            bgt_left = int(budget[row]) - int(spent[row])
+            try:
+                num_spent = int(spent[row] if spent[row] != "" else "0")
+                bgt_left = int(budget[row]) - num_spent
+            except Exception:
+                bgt_left = " unknown, budget not set."
             return bgt_left
         print(f"Please select what kind of operation you would like \
 to perform:\n-Update a worksheet:\n Please select what \
