@@ -13,17 +13,25 @@ Bear in mind that the values in the food and car worksheet must be subsequential
 ## FEATURES:
 
 ### Welcome Section:
+
  <img src ="readme-images/welcome.png">
 
 - This first section greets the user with a welcome message and requests to enter a number to choose the operation to perform from the presented list.
+
 <img src ="readme-images/welcome-complete.png">
 
 - If budgets have been set for the current month, it also gives the user immediate information about spending and budgets.
+
+<img src ="readme-images/welcome-incomplete.png">
+
+- If only some budgets have been set for the current month, it also gives the user the available information and states the unavailable budgets.
+
 <img src ="readme-images/welcome-invalid.png">
 
 - If the input choice is not in the number range or not a number at all, the program displays a customized message error.
 
 ### Months Section:
+
 <img src="readme-images/months.png">
 
 - This section requests the user to enter a number to choose the month relative to the previously selected operation.
@@ -31,28 +39,34 @@ Bear in mind that the values in the food and car worksheet must be subsequential
   - The first choice is to update an expense;
   - The first choice is to set a monthly budget;
   - The first choice is to view a total and the choice of Total Type Section is 1.
+
   <img src="readme-images/month-invalid.png">
 
 - If the input choice is not in the number range or not a number at all, the program displays a customized message error.
 
 ### Input Section:
+
 <img src="readme-images/input.png">
 
 - This section requests the user to enter the expense value to be registered or the budget's value to be set.
 
 <img src="readme-images/input-invalid.png">
+
 - If the input choice is not a positive number, the program displays a customized message error.
 
 ### Feedback Section:
+
 <img src="readme-images/feedback.png">
 
 - In this section, the program sends feedback to the user explaining how it handles the input data by printing the worksheet updated, the month, and the new value. Updating a value also triggers an update of monthly and yearly totals; messages of the main steps of the operations are displayed here too.
 
 ### Budget Section:
+
 <img src="readme-images/budget.png">
 
 - This section shows messages about the comparison between
 monthly and yearly expenses and their respective budgets.
+
 <img src="readme-images/budget-imp.png">
 
 - If the comparison is not possible, another sentence explains the reason on the terminal.
@@ -62,33 +76,40 @@ monthly and yearly expenses and their respective budgets.
   - The first choice is to set a monthly budget.
 
 ### Restart/Leave Section:
+
 <img src="readme-images/restart.png">
 
 - In this section, the program requests the user to choose between exiting the app or restarting the program.
+
 <img src="readme-images/restart-invalid.png">
 
 - If the input choice is: a letter but not y or n, not a letter at all, or more than one letter, the program displays a customized message error.
 
 ### Expense Type Section:
+
 <img src="readme-images/expense-type.png">
 
 - In this section, the program requests to enter a number to choose the expense type.
 - This section is displayed if:
   - The first choice is to set a monthly budget;
   - The first choice is to view a total and the choice of Total Type Section is 2.
+
 <img src="readme-images/expense-type-invalid.png">
 
 - If the input choice is not in the number range or not a number at all, the program displays a customized message error.
 
 ### View Total Section:
+
 <img src="readme-images/total.png">
 
 - In this section, the program requests to choose which total to display: the total of expenses by month or the total of a specific expense type by year.
+
 <img src="readme-images/total-invalid.png">
 
 - If the input choice is not in the number range or not a number at all, the program displays a customized message error.
 
 ## Flowchart:
+
 <img src="readme-images/chart.png">
 
 ## Testing:
@@ -276,5 +297,8 @@ Adding a ternary operator in the function to convert to 0 all empty strings fixe
 [Lucidchart](https://www.lucidchart.com): used for the diagram in README.md
 
 ## Libraries:
-[Gspread](https://docs.gspread.org);<br>
-[Google auth](https://pypi.org/project/google-auth/).
+[Gspread](https://docs.gspread.org):<br>used to access and update data in home-expenses-tracker spreadsheet;<br>
+[Google auth](https://pypi.org/project/google-auth/):<br>it uses the creds.json file to set up the authentication needed  to access the Google Cloud project;
+### Internal libraries:
+Math: used (math.ceil) to round numbers up to the next largest integer;<br>
+Datetime: used to show data relative to the current month.
