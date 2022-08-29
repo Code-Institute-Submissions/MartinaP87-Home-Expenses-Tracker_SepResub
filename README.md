@@ -256,6 +256,10 @@ When calculating the monthly bill totals, if there was an empty cell in the colu
 Fill up all cells with 0 values temporarily fixed the error.
 Adding a ternary operator in the function to convert to 0 all empty strings fixed the problem.
 
+Opening the application in a month that didn't have values in the total or budget worksheet caused the program to break.
+I reviewed the code and realized that the ValueError in the choose worksheet function wasn't the only potential error: there could also be an IndexError that I hadn't foreseen.
+I modified the choose worksheet function by adding a try statement in the main one. This change handles problems caused by missing values in the total and budget worksheet and avoids program breaking.
+
 ## Deployment:
 - In GitHub, create a list of requirements in requirements.txt by using this command in the terminal: **pip3 freeze > requirements.txt**;
 - Commit and push these changes;
