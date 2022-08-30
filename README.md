@@ -8,7 +8,7 @@ Home Expenses Tracker's target is young adults who just moved out from their par
 It also targets families with low incomes, who need to pay attention to any expense to stay within their budgets.
 
 To test the application without values here is the [link to the spreadsheet](https://docs.google.com/spreadsheets/d/16d9rYHmNwyW3FMlEfA099DIhwE0__wkl2gUl_VtKcjY/edit?usp=sharing).
-Bear in mind that the values in the food and car worksheet must be subsequential for the correct functioning of the app.
+Bear in mind that the values in the food and car worksheet must be subsequential for the correct functioning of the app, and to visualize the totals correctly, at least one value must be input in one of the expense worksheets.
 
 ## FEATURES:
 
